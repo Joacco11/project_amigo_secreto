@@ -50,6 +50,8 @@ function sortearAmigo(){
     const amigoSorteado = listaAmigos[indiceAleatorio];
 
     document.getElementById("resultado").innerHTML = `<li>${amigoSorteado}</li>`;
+    console.log(listaAmigos)
+    console.log(amigoSorteado)
 }
 
 function reiniciarSorteo() {
@@ -57,4 +59,5 @@ function reiniciarSorteo() {
     document.getElementById("listaAmigos").innerHTML = "";
     document.getElementById("resultado").innerHTML = "";
     console.log("Sorteo reiniciado. Lista vacía.");
+    console.log(listaAmigos)
 }
