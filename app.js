@@ -51,3 +51,10 @@ function sortearAmigo(){
 
     document.getElementById("resultado").innerHTML = `<li>${amigoSorteado}</li>`;
 }
+
+function reiniciarSorteo() {
+    listaAmigos = []; 
+    document.getElementById("listaAmigos").innerHTML = "";
+    document.getElementById("resultado").innerHTML = "";
+    console.log("Sorteo reiniciado. Lista vacía.");
+}
