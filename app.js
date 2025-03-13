@@ -37,6 +37,12 @@ function actualizarLista() {
     for (const amigo of listaAmigos) {
         const li = document.createElement("li"); 
         li.textContent = amigo; 
+
+        let btnEliminar = document.createElement("button");
+        btnEliminar.textContent = "❌";
+        btnEliminar.classList.add("btn-eliminar");
+        btnEliminar.onclick = () => eliminarAmigo(amigo);
+        li.appendChild(btnEliminar);
         lista.appendChild(li);  
     }
 }
@@ -60,4 +66,14 @@ function reiniciarSorteo() {
     document.getElementById("resultado").innerHTML = "";
     console.log("Sorteo reiniciado. Lista vacía.");
     console.log(listaAmigos)
+}
+
+function eliminarAmigo(nombre) {
+    for (let i = 0; i < listaAmigos.length; i++) {
+        if (listaAmigos[i] === nombre) {
+            listaAmigos.splice(i, 1);
+            break;
+        }
+    }
+    actualizarLista();
 }
